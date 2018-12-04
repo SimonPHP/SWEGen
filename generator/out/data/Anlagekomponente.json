@@ -1,5 +1,8 @@
 {
     "Id":"Number",
     "AnlageId":"Anlage",
-    "TypId": "Typ"
+    "TypId": "Typ",
+    "Methoden": {
+        "add(id, datum)":"Neue Anlagekomponente anlegen"
+    }
 }

@@ -1,5 +1,8 @@
 {
     "Id":"number",
     "Name":"String",
-    "Standort":"String"
+    "Standort":"String",
+    "Methoden": {
+        "add(datum)":"Neue Anlage anlegen"
+    }
 }
