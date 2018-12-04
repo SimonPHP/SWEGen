@@ -1,0 +1,6 @@
+{
+    "Id": "Int",
+    "Name": "String",
+    "Vorname": "String",
+    "Typ": ["Betriebspersonal", "Sachbearbeiter"]
+}

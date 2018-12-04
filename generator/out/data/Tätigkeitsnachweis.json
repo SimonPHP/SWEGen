@@ -1,0 +1,7 @@
+{
+    "Id": "niumber",
+    "MitarbeiterId": "number",
+    "MaßnahmenId": "number",
+    "startZeit": "Date",
+    "endZeit": "Date"
+}

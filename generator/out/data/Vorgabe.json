@@ -1,0 +1,5 @@
+{
+    "Id":"number",
+    "Vorgabe":["Intern", "Gesetzlich"],
+    "Beschreibung" :"String"
+}

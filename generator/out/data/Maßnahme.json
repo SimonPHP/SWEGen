@@ -1,0 +1,13 @@
+{
+    "Id":"number",
+    "AnlagekomponentenId":"Anlagekomponente",
+    "Typ":"Typ",
+    "planAnfang":"Date",
+    "planEnde":"Date",
+    "Interval":"number",
+    "tatAnfang":"Date",
+    "tatEnde": "Date",
+    "Bericht": "String",
+    "MitarbeiterId": "number",
+    "MaßnahmenId": "number"
+}
