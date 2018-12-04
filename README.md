@@ -12,14 +12,14 @@ import * as fs from "fs";
 
 Im Ordner "Out/data" für jede seiner "Klassen" eine JSON anlegen.
 
-{
-    "Id":"number",
-    "Name":"String",
-    "Standort":"String",
-    "Methoden": {
-        "add(datum)":"Neue Anlage anlegen"
-    }
-}
+{  
+    "Id":"number",  
+    "Name":"String",  
+    "Standort":"String",  
+    "Methoden": {  
+        "add(datum)":"Neue Anlage anlegen"  
+    }  
+}  
 
 Der "Methoden" Tag ist hier speziell und wird bei dem Data Dictonary rausgeschmissen.
 Daraus werden nachher die Methoden Tabellen gebildet.
