@@ -28,7 +28,13 @@ fs.readdir(inputPath, (err, files) => {
     let dataDictonary = "";
     let attTable = "";
     let metTable = "";
+    let classDiagram = "";
+    classDiagram += `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <diagram program="umlet" version="14.3.0">
+            <zoom_level>10</zoom_level>`; //start tag
+    let iter = 0;
     for (let i in data) {
+        iter++;
         if ("Methoden" in data[i]) //extract the Methoden json
          {
             methods[i] = data[i]["Methoden"];
@@ -107,8 +113,6 @@ fs.readdir(inputPath, (err, files) => {
             for (let c in methods[i]) {
                 let methodName = c.split("(")[0];
                 let methodSig = c.split("(")[1].slice(0, -1);
-                console.log("name: " + methodName);
-                console.log("sign: " + methodSig);
                 longestMethod = (methodName.length > longestMethod) ? methodName.length : longestMethod;
                 longestSignature = (methodSig.length > longestSignature) ? methodSig.length : longestSignature;
             }
@@ -132,10 +136,66 @@ fs.readdir(inputPath, (err, files) => {
             }
             metTable += '\n';
         }
+        //umlet class diagram generation
+        {
+            /**
+                 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <diagram program="umlet" version="14.3.0">
+                <zoom_level>10</zoom_level>
+
+                <element>
+                    <id>UMLClass</id>
+                    <coordinates>
+                    <x>10</x>
+                    <y>70</y>
+                    <w>210</w>
+                    <h>70</h>
+                    </coordinates>
+                    <panel_attributes>_object: Class_
+                --
+                id: Long="36548"
+                [waiting for message]</panel_attributes>
+                    <additional_attributes/>
+                </element>
+
+                </diagram>
+             */
+            let classAttributes = "";
+            let classMethods = "";
+            let aC = 0;
+            let mC = 0;
+            for (let a in data[i]) {
+                classAttributes += `- ${a}: ${data[i][a]} \n`;
+                aC++;
+            }
+            for (let m in methods[i]) {
+                classMethods += `+ ${m}: ${methods[i][m]} \n`;
+                mC++;
+            }
+            classDiagram += `
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>${iter * 30}</x>
+    <y>${iter * 30}</y>
+    <w>210</w>
+    <h>${(aC + mC + 2) * 20}</h>
+    </coordinates>
+    <panel_attributes>${i}
+--
+${classAttributes}
+--
+${classMethods}</panel_attributes>
+    <additional_attributes/>
+</element>
+             `;
+        }
     }
     fs.writeFileSync('dataDic.dat', dataDictonary, 'utf8');
     fs.writeFileSync('attTable.dat', attTable, 'utf8');
     fs.writeFileSync('metTable.dat', metTable, 'utf8');
+    classDiagram += `</diagram>`; //end tag
+    fs.writeFileSync('classDiagram.uxf', classDiagram, 'utf8');
     console.log(methods);
 });
 //capatilze the first letter, so we dont have to do it in the json files
