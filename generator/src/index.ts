@@ -247,8 +247,6 @@ ${classMethods}</panel_attributes>
     classDiagram += `</diagram>` //end tag
 
     fs.writeFileSync('classDiagram.uxf', classDiagram, 'utf8');
-
-    console.log(methods);
 })
 
 //capatilze the first letter, so we dont have to do it in the json files
