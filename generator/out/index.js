@@ -131,7 +131,7 @@ fs.readdir(inputPath, (err, files) => {
             for (let j in methods[i]) {
                 let methodName = j.split("(")[0];
                 let methodSig = j.split("(")[1].slice(0, -1);
-                metTable += `| ${methodName}${" ".repeat(lineSpaceings[0] - methodName.length - 1)}| ${methodSig}${" ".repeat(lineSpaceings[1] - methodSig.length - 1)}| ${" ".repeat(lineSpaceings[2] - 1)}|\n`;
+                metTable += `| ${methodName}${" ".repeat(lineSpaceings[0] - methodName.length - 1)}| ${methodSig}${" ".repeat(lineSpaceings[1] - methodSig.length - 1)}| ${methods[i][j]} ${" ".repeat(lineSpaceings[2] - 2 - methods[i][j].length)}|\n`;
                 metTable += stdLine;
             }
             metTable += '\n';
@@ -196,7 +196,6 @@ ${classMethods}</panel_attributes>
     fs.writeFileSync('metTable.dat', metTable, 'utf8');
     classDiagram += `</diagram>`; //end tag
     fs.writeFileSync('classDiagram.uxf', classDiagram, 'utf8');
-    console.log(methods);
 });
 //capatilze the first letter, so we dont have to do it in the json files
 function capFirstLetter(str) {

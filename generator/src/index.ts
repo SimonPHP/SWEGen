@@ -173,7 +173,7 @@ fs.readdir(inputPath, (err, files) => {
                 let methodName = j.split("(")[0];
                 let methodSig = j.split("(")[1].slice(0, -1);
 
-                metTable += `| ${ methodName }${ " ".repeat(lineSpaceings[0] - methodName.length - 1) }| ${ methodSig }${ " ".repeat(lineSpaceings[1] - methodSig.length - 1) }| ${ " ".repeat(lineSpaceings[2] - 1)}|\n`;
+                metTable += `| ${ methodName }${ " ".repeat(lineSpaceings[0] - methodName.length - 1) }| ${ methodSig }${ " ".repeat(lineSpaceings[1] - methodSig.length - 1) }| ${ methods[i][j] } ${ " ".repeat(lineSpaceings[2] - 2 - methods[i][j].length)}|\n`;
                 metTable += stdLine;
             }
             metTable += '\n';

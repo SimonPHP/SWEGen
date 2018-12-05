@@ -15,7 +15,8 @@ Im Ordner "Out/data" für jede seiner "Klassen" eine JSON anlegen.
 {  
     "Id":"number",  
     "Name":"String",  
-    "Standort":"String",  
+    "Standort":"String",
+    "liste":["hee", "dasd"],  
     "Methoden": {  
         "add(datum)":"Neue Anlage anlegen"  
     }  
@@ -23,6 +24,8 @@ Im Ordner "Out/data" für jede seiner "Klassen" eine JSON anlegen.
 
 Der "Methoden" Tag ist hier speziell und wird bei dem Data Dictonary rausgeschmissen.
 Daraus werden nachher die Methoden Tabellen gebildet.
+
+Mit Listen hat die Tabellen Formatierung Probleme aber das lohnt sich nicht zu fixen.
 
 Im Out Ordener node index.js aufrufen und kurz Warten.
 
