@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <diagram program="umlet" version="14.3.0">
+    <zoom_level>10</zoom_level>
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>30</x>
+    <y>30</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Anlage
+{
+    {"Id":"number","Name":"String","Standort":"String"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>60</x>
+    <y>60</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Anlagekomponente
+{
+    {"Id":"Number","AnlageId":"Anlage","TypId":"Typ"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>90</x>
+    <y>90</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Fahrplaneintrag
+{
+    {"Id":"number","AnlagekomponenteId":"Anlagekomponente","Startzeit":"Time","Endzeit":"Time"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>120</x>
+    <y>120</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Maßnahme
+{
+    {"Id":"number","AnlagekomponentenId":"Anlagekomponente","Typ:":["Wartung","Reparatur","Prüfung"],"Vorgabe:":"Vorgabe","planAnfang":"Date","planEnde":"Date","Interval":"number","tatAnfang":"Date","tatEnde":"Date","Bericht":"String","MitarbeiterId":"number","MaßnahmenId":"number"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>150</x>
+    <y>150</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Mitarbeiter
+{
+    {"Id":"Int","Name":"String","Vorname":"String","Typ":["Betriebspersonal","Sachbearbeiter"]}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>180</x>
+    <y>180</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Typ
+{
+    {"Id":"number","Beschreibung":["Schleuse","Schifsshebewerk","Brücke","Deich","Beleuchtung","Beschilderung"]}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>210</x>
+    <y>210</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Tätigkeitsnachweis
+{
+    {"Id":"niumber","MitarbeiterId":"number","MaßnahmenId":"number","startZeit":"Date","endZeit":"Date"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>240</x>
+    <y>240</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Vorgabe
+{
+    {"Id":"number","Vorgabe":["Intern","Gesetzlich"],"Beschreibung":"String"}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             </diagram>

@@ -2,5 +2,8 @@
     "Id":"number",
     "AnlagekomponenteId":"Anlagekomponente",
     "Startzeit":"Time",
-    "Endzeit":"Time"
+    "Endzeit":"Time",
+    "Methoden":{
+        "add(AnlagekomponentenId, Startzeit, Endzeit)":"Legt einen an"
+    }
 }

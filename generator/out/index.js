@@ -29,9 +29,13 @@ fs.readdir(inputPath, (err, files) => {
     let attTable = "";
     let metTable = "";
     let classDiagram = "";
+    let jsonDiagram = "";
     classDiagram += `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <diagram program="umlet" version="14.3.0">
             <zoom_level>10</zoom_level>`; //start tag
+    jsonDiagram += `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <diagram program="umlet" version="14.3.0">
+    <zoom_level>10</zoom_level>`; //start tag
     let iter = 0;
     for (let i in data) {
         iter++;
@@ -190,12 +194,54 @@ ${classMethods}</panel_attributes>
 </element>
              `;
         }
+        //umlet mongoDBgen
+        {
+            /**
+             <element>
+                <id>UMLClass</id>
+                <coordinates>
+                  <x>140</x>
+                  <y>110</y>
+                  <w>150</w>
+                  <h>120</h>
+                </coordinates>
+                <panel_attributes>halign=left
+            Anlagekomponente
+            {
+                "ID:""
+                "AnalgeID":""
+                "Typ":""
+            }</panel_attributes>
+                <additional_attributes/>
+              </element>
+             */
+            jsonDiagram += `
+<element>
+    <id>UMLClass</id>
+    <coordinates>
+    <x>${iter * 30}</x>
+    <y>${iter * 30}</y>
+    <w>210</w>
+    <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+${i}
+{
+    ${JSON.stringify(data[i])}
+}
+</panel_attributes>
+    <additional_attributes/>
+</element>
+             `;
+        }
     }
     fs.writeFileSync('dataDic.dat', dataDictonary, 'utf8');
     fs.writeFileSync('attTable.dat', attTable, 'utf8');
     fs.writeFileSync('metTable.dat', metTable, 'utf8');
     classDiagram += `</diagram>`; //end tag
     fs.writeFileSync('classDiagram.uxf', classDiagram, 'utf8');
+    jsonDiagram += `</diagram>`; //end tag
+    fs.writeFileSync('jsonDiagram.uxf', jsonDiagram, 'utf8');
 });
 //capatilze the first letter, so we dont have to do it in the json files
 function capFirstLetter(str) {

@@ -3,6 +3,7 @@
     "Name":"String",
     "Standort":"String",
     "Methoden": {
-        "add(datum)":"Neue Anlage anlegen"
+        "add(Name, Standort)":"Neue Anlage anlegen",
+        "get()":"Gibt alle Anlagekomponenten zurück"
     }
 }

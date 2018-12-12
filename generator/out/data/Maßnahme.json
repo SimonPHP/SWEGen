@@ -1,7 +1,8 @@
 {
     "Id":"number",
     "AnlagekomponentenId":"Anlagekomponente",
-    "Typ":"Typ",
+    "Typ:":["Wartung", "Reparatur", "Prüfung"],
+    "Vorgabe:":"Vorgabe",
     "planAnfang":"Date",
     "planEnde":"Date",
     "Interval":"number",
@@ -9,5 +10,9 @@
     "tatEnde": "Date",
     "Bericht": "String",
     "MitarbeiterId": "number",
-    "MaßnahmenId": "number"
+    "MaßnahmenId": "number",
+    "Methoden": {
+        "add(...)": "Fügt eine Maßnahme einer Anlagekomponente hinzu",
+        "addBericht(text)": "Fügt einen Bericht hinzu"
+    }
 }

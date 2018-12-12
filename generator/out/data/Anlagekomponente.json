@@ -3,6 +3,9 @@
     "AnlageId":"Anlage",
     "TypId": "Typ",
     "Methoden": {
-        "add(id, datum)":"Neue Anlagekomponente anlegen"
+        "add(AnlageId, TypId)":"Neue Anlagekomponente anlegen",
+        "getStatus()": "Gibt den Status der Komponenten zurück",
+        "getMaßnahmen()": "Gibt bevorstehende Maßnahmen zurück",
+        "getPrüfungen()": "Gibt bevorstehende Prüfungen zurück"
     }
 }
